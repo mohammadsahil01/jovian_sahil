@@ -10,24 +10,30 @@
         height:360px;
         object-fit:cover;
         width: 100%;
-        
+        padding:16px;
       }
-      .container {
-        max-width:720px;
-        margin: 0 auto 0 auto;
-      }
+      
     </style>
   </head>
   <body>
+    {% include 'nav.html' %}
+    <img class =".img-fluid" id ="banner" src= "https://joviansahil.sahilmohammad2.repl.co/static/banner.jpeg" >
     <div class = "container">
     
        <h1 class ="text-center mt-2 mb-4" > {{company_name}} Careers</h1>
-       <img class =".img-fluid" id ="banner" src= "https://joviansahil.sahilmohammad2.repl.co/static/banner.jpeg" >
-       <h2 class ="text-center mt-2 mb-4">About Jovian</h2>
-       <p class="lead">
+       
+   <div class="row">
+    <div class="col-6 mb-2">
+      <p class="lead">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-       </p>
-       <h2 class ="text-center mt-2 mb-4">Job Openings</h2>
+     </p>
+      </div>
+        <div class="col-6 mb-2"> 
+       <img src="/static/people.jpeg" style="height:280px;"
+      </div>
+      </div>
+           
+       <h2 class ="text-center mt-4 mb-4">Open Positions</h2>
        <div>
          {% for job in jobs %}
           {%include "jobitem.html" %}
@@ -35,9 +41,10 @@
        </div>
        <div style= "text-align:center">
        <button type="button" class="btn btn-primary btn-lg">Contact Us</button>
-       <p class = "mt-4">Copyright 2023,Jovian</p>
+       
        
     </div>
+    {% include 'footer.html' %}
   </body>
   
 </html>
